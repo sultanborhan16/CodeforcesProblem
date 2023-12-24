@@ -1,0 +1,78 @@
+
+////A. Least Product
+
+#include<bits/stdc++.h>
+using namespace std;
+int main (){
+ 
+  int t;
+  cin>>t;
+  while(t--){
+      long long n;
+      cin>>n;
+      long long  pos=0;
+      long long  neg=0;
+       int zer =0;
+      for(int i=0;i<n;i++){
+         int x;
+         cin>>x;
+         if(x>0){
+           pos++;
+         }
+         if(x<0){
+           neg++;
+         }
+         if(x==0){
+            zer=1;
+         }
+      }
+       if(zer==1){
+        cout<<'0'<<endl;
+       }
+      else if((neg==0 && zer==1 ) || neg%2!=0 ){
+          cout<<'0'<<endl;
+      }
+      else if((pos!=0 || neg%2==0) && zer==0){
+        cout<<"1"<<endl;
+        cout<<"1 "<<"0"<<endl;
+      }
+ 
+  }
+}
+
+
+///B. Erase First or Second Letter
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+// Map is occupying a lot of space, what to do?????
+ 
+void solve()
+{
+    int n; cin>>n;
+    string s; cin>>s;
+    map<char,int> mp;
+    vector<int> v(n, 0);
+    for(int i = 0 ; i < n ; i++)
+    {
+        mp[s[i]]++;
+       // cout<<mp.
+        v[i] = mp.size();
+    }
+    for(int i = 0 ; i < n ; i++)
+    {
+       cout<<mp[s[i]];
+    }
+    
+}
+ 
+signed main()
+{
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    int t; cin>>t; while(t--)
+    solve();
+    return 0;
+}
