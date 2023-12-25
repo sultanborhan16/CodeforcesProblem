@@ -76,3 +76,49 @@ signed main()
     solve();
     return 0;
 }
+
+
+//////C. Watering an Array
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+// Map is occupying a lot of space, what to do?????
+ 
+
+ int main(){
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n,k,d;
+        cin>>n>>k>>d;
+        ll num[n];
+        ll v[k];
+        for(int i=0;i<n;i++){
+            cin>>num[i];
+        }
+        for(int i=0;i<k;i++){
+            cin>>v[i];
+        }
+
+        ll ans=0;
+        ll tmp=0;
+        for(int fop=0;fop!=min(2*n+1,d);fop++){
+            int day = fop%k;
+            tmp=0;
+            for(int i=0;i<n;i++){
+                if(num[i]==i+1){
+                   tmp++;
+                }
+            }
+            ans = max(ans,tmp+(d-fop-1)/2);
+
+            for(int i=1;i<v[day]+1;i++){
+                num[i-1]++;
+            }
+        }
+        cout<<ans<<endl;
+    }
+ }
