@@ -1,0 +1,114 @@
+              ///A. 2023
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+ int main ()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        int n,k;
+        cin>>n>>k;
+        int num[n];
+        ll mul=1;
+        for(int i=0;i<n;i++){
+
+            int x;
+            cin>>x;
+            mul*=x;
+
+        }
+
+        if(2023%mul!=0){
+            cout<<"NO"<<endl;
+        }
+        else{
+            cout<<"YES"<<endl;
+            cout<<2023/mul<<" ";
+
+            for(int i=0;i<k-1;i++){
+                cout<<"1"<<" ";
+            }
+            cout<<endl;
+
+        }
+    }
+}
+
+
+         ///B. Two Divisors
+        
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{   
+     ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+
+        int T = 1;
+        cin >> T;
+        while (T--)
+        {
+        
+        ll a,b;
+       cin>>a>>b;
+       ll g= __gcd(a,b);
+       if(g==a){
+    cout<<b*(b/a)<<endl;
+ }
+      else {
+      cout<<(a*b)/g<<endl;
+      }
+        }
+        return 0;
+}
+
+
+            ///C. Training Before the Olympiad
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{   
+    int t;
+    cin>>t;
+    while(t--){
+        ll n;
+        cin>>n;
+        ll sum=0;
+        ll num[n];
+        int cnt=0;
+        for(int i=0;i<n;i++){
+            cin>>num[i];
+            sum+=num[i];
+            if(num[i]%2!=0){
+                cnt++;
+            }
+           if(i==0){
+               cout<<num[i]<<" ";
+               continue;
+           }
+            int x = cnt/3;
+           if(cnt%3==1){
+              cout<<sum-x-1<<" ";
+           }
+           else{
+            cout<<sum-x<<" ";
+           }
+
+
+        }
+
+       cout<<endl;
+       
+    }
+}
